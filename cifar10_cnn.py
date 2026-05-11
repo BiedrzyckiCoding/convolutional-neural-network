@@ -234,5 +234,5 @@ if __name__ == '__main__':
     plot_confusion_matrix(model, x_test, y_test, LABELS)
     show_misclassified(model, x_test, y_test, LABELS)
 
-#Test loss:     0.3451
-#Test accuracy: 0.8840
+# Test loss:     0.3451
+# Test accuracy: 0.8840
