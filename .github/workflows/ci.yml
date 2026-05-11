@@ -25,7 +25,7 @@ jobs:
 
       - name: Run flake8
         # E501 = line too long; we allow up to 100 chars for readability
-        run: flake8 06/cifar10_cnn.py --max-line-length=100 --statistics
+        run: flake8 cifar10_cnn.py --max-line-length=100 --statistics
 
   # Step 2 — smoke-test the model end-to-end (tiny data, 1 epoch)
   smoke-test:
@@ -50,7 +50,7 @@ jobs:
         # --ci flag: 500 training samples, 1 epoch — verifies the full
         # pipeline (load → build → train → evaluate → save → plots) without
         # spending 10+ minutes on a full training run
-        run: python 06/cifar10_cnn.py --ci
+        run: python cifar10_cnn.py --ci
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
