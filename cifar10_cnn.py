@@ -72,7 +72,7 @@ def build_model():
 
     # First conv block — low-level edges and colour cues
     x = Conv2D(32, (3, 3), padding='same', activation='relu', kernel_initializer=init)(x)
-    x = BatchNormalization()(x)
+    x = BatchNormalization()(x) # dac relu po normancation
     x = Conv2D(32, (3, 3), padding='same', activation='relu', kernel_initializer=init)(x)
     x = BatchNormalization()(x)
     x = MaxPooling2D(pool_size=(2, 2))(x)
@@ -95,7 +95,7 @@ def build_model():
     x = Dropout(0.4)(x)
 
     # Classifier head
-    x = Flatten()(x)
+    x = Flatten()(x) # dodac global average pooling 
     x = Dense(512, activation='relu', kernel_initializer=init)(x)
     x = BatchNormalization()(x)
     x = Dropout(0.5)(x)
